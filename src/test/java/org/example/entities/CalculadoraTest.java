@@ -36,4 +36,5 @@ public class CalculadoraTest {
     void verificaSePar(int numero) {
          assertTrue(calculadora.verificaSePar(numero));
     }
+
 }

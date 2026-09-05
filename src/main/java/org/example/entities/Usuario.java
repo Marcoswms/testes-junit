@@ -21,6 +21,14 @@ public class Usuario {
         }
     }
 
+    public boolean contaCaracter(String palavra) {
+        int limiteDeCaracter = 3;
+        palavra = palavra.replaceAll("\\s", "");
+        int qtdCaracter = palavra.length();
+
+        return qtdCaracter > limiteDeCaracter;
+    }
+
     public String getNome() {
         return nome;
     }
