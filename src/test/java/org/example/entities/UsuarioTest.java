@@ -32,14 +32,14 @@ public class UsuarioTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"Olá mundo", "Amor", "Balde"})
-    void validaCaracterTrue(String palavra){
-        assertTrue(usuario.contaCaracter(palavra));
+    void validaCaracterTrue(String palavra) {
+        assertTrue(usuario.validaCaracter(palavra));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"O    i", "  Ola  ", "E U", "Alo"})
-    void validaCaracterFalse(String palavra){
-        assertFalse(usuario.contaCaracter(palavra));
+    void validaCaracterFalse(String palavra) {
+        assertFalse(usuario.validaCaracter(palavra));
     }
 
     @ParameterizedTest
@@ -50,6 +50,14 @@ public class UsuarioTest {
             "E U, false"
     })
     void validaCaracterTrueAndFalse(String palavra, boolean esperado) {
-        assertEquals(esperado,  usuario.contaCaracter(palavra));
+        assertEquals(esperado, usuario.validaCaracter(palavra));
+    }
+
+    @Test
+    void capturaNullPointerException() {
+        Exception erro = assertThrows(NullPointerException.class, () -> {
+            usuario.validaCaracter(null);
+        });
+        assertEquals("Palavra não pode ser nula", erro.getMessage());
     }
 }

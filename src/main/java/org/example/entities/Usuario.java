@@ -21,7 +21,11 @@ public class Usuario {
         }
     }
 
-    public boolean contaCaracter(String palavra) {
+    public boolean validaCaracter(String palavra) {
+        if (palavra == null) {
+            throw new NullPointerException("Palavra não pode ser nula");
+        }
+
         int limiteDeCaracter = 3;
         palavra = palavra.replaceAll("\\s", "");
         int qtdCaracter = palavra.length();
