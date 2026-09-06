@@ -12,15 +12,6 @@ public class Usuario {
         this.nota = nota;
     }
 
-    public void reajusteSalarial(int nota) {
-        if(nota > 8) {
-            this.salario *= 1.50;
-        }
-        else {
-            this.salario *= 1.10;
-        }
-    }
-
     public boolean validaCaracter(String palavra) {
         if (palavra == null) {
             throw new NullPointerException("Palavra não pode ser nula");
@@ -31,6 +22,15 @@ public class Usuario {
         int qtdCaracter = palavra.length();
 
         return qtdCaracter > limiteDeCaracter;
+    }
+
+    public void reajusteSalarial(int nota) {
+        if(nota > 8) {
+            this.salario *= 1.50;
+        }
+        else {
+            this.salario *= 1.10;
+        }
     }
 
     public String getNome() {
