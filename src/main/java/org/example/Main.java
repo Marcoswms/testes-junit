@@ -1,4 +1,7 @@
 package org.example;
+
+import org.example.entities.Celular;
+
 /* Anotações:
     .parseInt() - função da classe Integer para a conversão de 'String' para 'int'.
     .replaceAll() - Remove TODOS os tipos de espaços em branco, como tabulações e quebras de linhas usando '\\s'.
